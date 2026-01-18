@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Ethiopia Tourism</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Additional gallery styles */
+        .gallery-filter {
+            margin-bottom: 30px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            margin-bottom: 30px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-category {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+        
+        .gallery-title {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .modal-img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        
+        .modal-caption {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px;
+            border-radius: 0 0 8px 8px;
+            margin-top: -5px;
+        }
+        
+        .filter-btn.active {
+            background-color: var(--primary-color) !important;
+            color: white !important;
+            border-color: var(--primary-color) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span>Ethio</span>Travels</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Ethiopia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="destinations.html">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="display-5 fw-bold">Gallery</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Gallery</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Gallery Content -->
+    <section class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title text-center">Ethiopia Through the Lens</h2>
+                    <p class="mb-5">Explore the beauty and diversity of Ethiopia through these stunning photographs and videos.</p>
+                </div>
+            </div>
+            
+            <!-- Gallery Filter -->
+            <div class="row gallery-filter">
+                <div class="col-12 text-center">
+                    <button class="btn btn-outline-primary filter-btn active" data-filter="all">All</button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="landscape">Landscapes</button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="culture">Culture</button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="wildlife">Wildlife</button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="historical">Historical</button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="people">People</button>
+                </div>
+            </div>
+            
+            <!-- Gallery Grid -->
+            <div class="row" id="gallery-container">
+                <!-- Gallery items will be loaded dynamically with JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery -->
+    <section class="page-section bg-light-alt">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title text-center">Experience Ethiopia in Motion</h2>
+                    <p class="mb-5">Watch these videos to get a real feel for Ethiopia's beauty and culture.</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/2xW9mTStyhM" 
+                                title="Ethiopia - Land of Origins" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h4 class="mt-3">Ethiopia: Land of Origins</h4>
+                    <p>A breathtaking journey through Ethiopia's most spectacular landscapes and ancient sites.</p>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/nv6gYQ2sNqY" 
+                                title="Discover Ethiopia" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h4 class="mt-3">The Cultural Heart of Africa</h4>
+                    <p>Explore Ethiopia's rich cultural heritage, from ancient traditions to vibrant modern life.</p>
+                </div>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-lg-4 mb-4">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/yb56XbZtG0Q" 
+                                title="Lalibela Ethiopia" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h5 class="mt-2">Lalibela: The Eighth Wonder</h5>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/IN0hBV3cD74" 
+                                title="Simien Mountains" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h5 class="mt-2">Simien Mountains National Park</h5>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/MRzJqgC6ZeI" 
+                                title="Ethiopian Coffee Ceremony" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <h5 class="mt-2">The Ethiopian Coffee Ceremony</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photography Tips -->
+    <section class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title text-center">Photography Tips for Ethiopia</h2>
+                    <p class="mb-5">Capture the best moments of your Ethiopian adventure with these photography tips.</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="about-icon mb-3">
+                                <i class="fas fa-sun"></i>
+                            </div>
+                            <h4>Best Lighting</h4>
+                            <p>The golden hours (sunrise and sunset) provide the best light for photography in Ethiopia. The soft light enhances landscapes and portraits.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="about-icon mb-3">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>People Photography</h4>
+                            <p>Always ask for permission before photographing people. Ethiopians are generally friendly but appreciate being asked first.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <div class="about-icon mb-3">
+                                <i class="fas fa-camera"></i>
+                            </div>
+                            <h4>Equipment</h4>
+                            <p>Bring a zoom lens for wildlife, a wide-angle for landscapes, and extra memory cards and batteries as electricity can be unreliable.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-10 mx-auto">
+                    <div class="alert alert-info">
+                        <h5><i class="fas fa-info-circle me-2"></i> Photography Etiquette</h5>
+                        <p class="mb-0">Some religious sites restrict photography, especially inside churches. Always check with your guide or local authorities. Military installations, airports, and bridges should never be photographed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h3 class="footer-logo"><span>Ethio</span>Travels</h3>
+                    <p>Discover the beauty, history, and culture of Ethiopia with our expertly crafted tours and travel experiences.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Ethiopia</a></li>
+                            <li><a href="destinations.html">Destinations</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h5>Top Destinations</h5>
+                        <ul>
+                            <li><a href="destinations.html">Lalibela</a></li>
+                            <li><a href="destinations.html">Simien Mountains</a></li>
+                            <li><a href="destinations.html">Danakil Depression</a></li>
+                            <li><a href="destinations.html">Axum</a></li>
+                            <li><a href="destinations.html">Omo Valley</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h5>Contact Info</h5>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Bole Road, Addis Ababa</li>
+                            <li><i class="fas fa-phone me-2"></i> +251 11 123 4567</li>
+                            <li><i class="fas fa-envelope me-2"></i> info@ethiotravels.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 EthioTravels. All rights reserved. | Designed for Ethiopia Tourism</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/gallery.js"></script>
+</body>
+</html>

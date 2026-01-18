@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Ethiopia Tourism</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><span>Ethio</span>Travels</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Ethiopia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="destinations.html">Destinations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="display-5 fw-bold">Contact Us</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title text-center">Get In Touch</h2>
+                    <p class="mb-5">Have questions about traveling to Ethiopia? Ready to plan your trip? Contact us today!</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="firstName" class="form-label">First Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="lastName" class="form-label">Last Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone">
+                            </div>
+                            <div class="mb-3">
+                                <label for="country" class="form-label">Country</label>
+                                <select class="form-select" id="country">
+                                    <option value="" selected>Select your country</option>
+                                    <option value="usa">United States</option>
+                                    <option value="uk">United Kingdom</option>
+                                    <option value="canada">Canada</option>
+                                    <option value="australia">Australia</option>
+                                    <option value="germany">Germany</option>
+                                    <option value="france">France</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="interest" class="form-label">Tour Interest</label>
+                                <select class="form-select" id="interest">
+                                    <option value="" selected>Select an option</option>
+                                    <option value="historical">Historical & Cultural Tours</option>
+                                    <option value="nature">Nature & Trekking</option>
+                                    <option value="adventure">Adventure Travel</option>
+                                    <option value="photography">Photography Tours</option>
+                                    <option value="family">Family Vacations</option>
+                                    <option value="custom">Custom Itinerary</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="travelDate" class="form-label">Preferred Travel Date</label>
+                                <input type="month" class="form-control" id="travelDate">
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Your Message <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Tell us about your travel plans, questions, or special requests..." required></textarea>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="newsletter" checked>
+                                <label class="form-check-label" for="newsletter">Subscribe to our newsletter for updates and special offers</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="contact-info">
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Our Office</h4>
+                                <p>Bole Road, Addis Ababa<br>Ethiopia</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone Number</h4>
+                                <p>+251 11 123 4567<br>+251 91 234 5678</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email Address</h4>
+                                <p>info@ethiotravels.com<br>bookings@ethiotravels.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Working Hours</h4>
+                                <p>Monday - Friday: 8:30 AM - 5:30 PM<br>Saturday: 9:00 AM - 1:00 PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Emergency Contact -->
+                    <div class="emergency-contact mt-5 p-4 rounded" style="background-color: #f8f9fa; border-left: 4px solid var(--primary-color);">
+                        <h4><i class="fas fa-exclamation-triangle text-warning me-2"></i> Emergency Contact</h4>
+                        <p class="mb-2">For urgent assistance during your trip in Ethiopia:</p>
+                        <p class="mb-1"><strong>24/7 Emergency:</strong> +251 91 999 9999</p>
+                        <p class="mb-0"><strong>Email:</strong> emergency@ethiotravels.com</p>
+                    </div>
+                    
+                    <!-- Social Media Links -->
+                    <div class="social-contact mt-5">
+                        <h4 class="mb-3">Connect With Us</h4>
+                        <div class="d-flex">
+                            <a href="#" class="social-icon me-3">
+                                <i class="fab fa-facebook-f fa-2x"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="#" class="social-icon me-3">
+                                <i class="fab fa-instagram fa-2x"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="social-icon me-3">
+                                <i class="fab fa-twitter fa-2x"></i>
+                                <span>Twitter</span>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-whatsapp fa-2x"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="page-section bg-light-alt">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title text-center mb-5">Our Location</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="map-container rounded shadow">
+                        <!-- Embed Google Map -->
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.800635559226!2d38.75789431431789!3d9.006854193543683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b85f0df8c4f2f%3A0x8f5e2b5f2b5e4f5e!2sBole%20Road%2C%20Addis%20Ababa%2C%20Ethiopia!5e0!3m2!1sen!2sus!4v1623456789012!5m2!1sen!2sus" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title text-center">Frequently Asked Questions</h2>
+                    <p class="mb-5">Find answers to common questions about traveling to Ethiopia.</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    Do I need a visa to visit Ethiopia?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, most visitors require a visa to enter Ethiopia. Tourist visas can be obtained online through the official e-visa portal or at Ethiopian embassies abroad. Some nationalities can also get a visa on arrival at Bole International Airport in Addis Ababa.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    What is the best time to visit Ethiopia?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    The best time to visit Ethiopia is during the dry season from October to March. This period offers pleasant weather and clear skies, ideal for trekking and sightseeing. The rainy season is from June to September, which can make some roads impassable but offers lush green landscapes.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Is Ethiopia safe for tourists?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Ethiopia is generally safe for tourists, especially in major tourist areas. However, like any destination, it's important to take standard precautions. We recommend traveling with reputable tour operators, avoiding political demonstrations, and following local advice. Our team provides 24/7 support for all our clients.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    What vaccinations do I need before traveling?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Recommended vaccinations include Yellow Fever (required if coming from a Yellow Fever endemic country), Typhoid, Hepatitis A and B, Tetanus, and Meningitis. Malaria prophylaxis is also recommended for travel to lowland areas. Please consult with a travel clinic or your doctor at least 4-6 weeks before your trip.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h3 class="footer-logo"><span>Ethio</span>Travels</h3>
+                    <p>Discover the beauty, history, and culture of Ethiopia with our expertly crafted tours and travel experiences.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h5>Quick Links</h5>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About Ethiopia</a></li>
+                            <li><a href="destinations.html">Destinations</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h5>Top Destinations</h5>
+                        <ul>
+                            <li><a href="destinations.html">Lalibela</a></li>
+                            <li><a href="destinations.html">Simien Mountains</a></li>
+                            <li><a href="destinations.html">Danakil Depression</a></li>
+                            <li><a href="destinations.html">Axum</a></li>
+                            <li><a href="destinations.html">Omo Valley</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h5>Contact Info</h5>
+                        <ul>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> Bole Road, Addis Ababa</li>
+                            <li><i class="fas fa-phone me-2"></i> +251 11 123 4567</li>
+                            <li><i class="fas fa-envelope me-2"></i> info@ethiotravels.com</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 EthioTravels. All rights reserved. | Designed for Ethiopia Tourism</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Additional JavaScript for contact page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Phone number formatting
+            const phoneInput = document.getElementById('phone');
+            if (phoneInput) {
+                phoneInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    if (value.length > 0) {
+                        value = '+' + value;
+                        if (value.length > 4) {
+                            value = value.substring(0, 4) + ' ' + value.substring(4);
+                        }
+                        if (value.length > 9) {
+                            value = value.substring(0, 9) + ' ' + value.substring(9);
+                        }
+                        if (value.length > 14) {
+                            value = value.substring(0, 14);
+                        }
+                    }
+                    e.target.value = value;
+                });
+            }
+            
+            // Form submission feedback
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Show loading state
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending...';
+                    submitBtn.disabled = true;
+                    
+                    // Simulate API call
+                    setTimeout(() => {
+                        // Show success message
+                        alert('Thank you for your message! We will get back to you within 24 hours.');
+                        
+                        // Reset form
+                        contactForm.reset();
+                        
+                        // Restore button
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 1500);
+                });
+            }
+            
+            // Social icon hover effect
+            const socialIcons = document.querySelectorAll('.social-icon');
+            socialIcons.forEach(icon => {
+                icon.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                icon.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
